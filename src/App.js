@@ -3,6 +3,7 @@ import Link from "./Link";
 import ShoppingCart from "./ShoppingCart/ShoppingCart";
 import Select from "./Select";
 import Breeds from "./Breeds";
+import Alert from "./Alert";
 
 class App extends Component {
     render() {
@@ -30,6 +31,11 @@ class App extends Component {
                 <Select items={select_items} />
 
                 <Breeds list={dog_list} />
+
+                <main>
+                    <Alert>We are almost out of coockies</Alert>
+                    <Alert isError>We are completely out of ice cream</Alert>
+                </main>
             </Fragment>
         );
     }
