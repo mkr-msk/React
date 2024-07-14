@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import ShoppingCart from "./ShoppingCart/ShoppingCart";
 import Breeds from "./Breeds";
 import Menu from "./Menu/Menu";
+import Gallery from "./Gallery/Gallery";
 
 import "./App.css";
 
@@ -20,8 +21,13 @@ function App() {
 
     return (
         <Fragment>
-            <main>
+            <header>
                 <Menu />
+            </header>
+
+            <main>
+                <h1>Animals</h1>
+                <Gallery />
             </main>
 
             <ShoppingCart items={shoppingCart_items} user={user} />
