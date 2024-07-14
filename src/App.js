@@ -1,44 +1,35 @@
-import React, { Fragment, Component } from "react";
-import Link from "./Link";
+import React, { Fragment } from "react";
 import ShoppingCart from "./ShoppingCart/ShoppingCart";
-import Select from "./Select";
 import Breeds from "./Breeds";
-import Alert from "./Alert";
+import Menu from "./Menu/Menu";
 
-class App extends Component {
-    render() {
-        const shoppingCart_items = [1, 2, 3];
-        const user = {
-            creditcard: true, 
-            address: true
-        }
+import "./App.css";
 
-        const select_items = ["apples", "pears", "playstations"];
-
-        const dog_list = [
-            { breed: "Chuhuahua", description: "Cute breed of dog." },
-            { breed: "Corgi", description: "Cute breed of dog." },
-            { breed: "Cumberland Sheepdog", description: "Extinct breed of dog." },
-        ];
-
-        return (
-            <Fragment>
-                <Link url="//react.dev"><strong>React</strong></Link>
-                <Link url="//vuejs.org">Vue</Link>
-
-                <ShoppingCart items={shoppingCart_items} user={user} />
-
-                <Select items={select_items} />
-
-                <Breeds list={dog_list} />
-
-                <main>
-                    <Alert>We are almost out of coockies</Alert>
-                    <Alert isError>We are completely out of ice cream</Alert>
-                </main>
-            </Fragment>
-        );
+function App() {
+    const shoppingCart_items = [1, 2, 3];
+    const user = {
+        creditcard: true,
+        address: true
     }
+
+    const dog_list = [
+        { breed: "Chuhuahua", description: "Cute breed of dog." },
+        { breed: "Corgi", description: "Cute breed of dog." },
+        { breed: "Cumberland Sheepdog", description: "Extinct breed of dog." },
+    ];
+
+    return (
+        <Fragment>
+            <main>
+                <Menu />
+            </main>
+
+            <ShoppingCart items={shoppingCart_items} user={user} />
+
+            <Breeds list={dog_list} />
+
+        </Fragment>
+    );
 }
 
 export default App;
