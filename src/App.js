@@ -1,40 +1,32 @@
-import React, { Fragment } from "react";
-import ShoppingCart from "./ShoppingCart/ShoppingCart";
-import Breeds from "./Breeds";
 import Menu from "./Menu/Menu";
 import Gallery from "./Gallery/Gallery";
+import TodoApplication from "./TodoApplication";
 
 import "./App.css";
 
 function App() {
-    const shoppingCart_items = [1, 2, 3];
-    const user = {
-        creditcard: true,
-        address: true
-    }
-
-    const dog_list = [
-        { breed: "Chuhuahua", description: "Cute breed of dog." },
-        { breed: "Corgi", description: "Cute breed of dog." },
-        { breed: "Cumberland Sheepdog", description: "Extinct breed of dog." },
+    const todoApplication_items = [
+        { task: "Feed the plants", done: false, index: 0 },
+        { task: "Water the dishes", done: false, index: 1 },
+        { task: "Clean the cat", done: false, index: 2 },
     ];
 
     return (
-        <Fragment>
+        <>
             <header>
                 <Menu />
             </header>
 
             <main>
-                <h1>Animals</h1>
-                <Gallery />
+                <article>
+                    <h1>Animals</h1>
+                    <Gallery />
+                </article>
+                <aside>
+                    <TodoApplication initialList={todoApplication_items} />
+                </aside>
             </main>
-
-            <ShoppingCart items={shoppingCart_items} user={user} />
-
-            <Breeds list={dog_list} />
-
-        </Fragment>
+        </>
     );
 }
 
